@@ -15,10 +15,22 @@
 </head>
 <body class="c-app">
     @include('layouts.sidebar')
-    <div id="app">
-        <main class="py-4">
-            @yield('content')
-        </main>
+    
+    <div id="c-wrapper">
+        <header class="c-header c-header-light c-header-fixed">
+            @include('layouts.header')
+            <div class="c-subheader justify-content-between px-3">
+                @yield('breadcrumb')
+            </div>
+        </header>
+
+        <div class="c-body">
+            <main class="c-main">
+                @yield('content')
+            </main>
+        </div>
     </div>
+
+    @include('includes.js')
 </body>
 </html>
