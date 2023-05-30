@@ -15,6 +15,8 @@ class DatabaseSeeder extends Seeder
         $this->call(PermissionTableSeeder::class);
         $this->call(SuperUserSeeder::class);
         $this->call(CustomerSeeder::class);
+        $this->call(SettingSeeder::class);
+        $this->call(CurrencySeeder::class);
         // \App\Models\User::factory(10)->create();
 
         // \App\Models\User::factory()->create([

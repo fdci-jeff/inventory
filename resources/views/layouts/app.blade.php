@@ -16,7 +16,7 @@
 <body class="c-app">
     @include('layouts.sidebar')
     
-    <div id="c-wrapper">
+    <div class="c-wrapper">
         <header class="c-header c-header-light c-header-fixed">
             @include('layouts.header')
             <div class="c-subheader justify-content-between px-3">
@@ -29,6 +29,8 @@
                 @yield('content')
             </main>
         </div>
+
+        @include('layouts.footer')
     </div>
 
     @include('includes.js')

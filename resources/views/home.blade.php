@@ -70,9 +70,9 @@
         </div>
         @endcan
 
-        {{-- @can('show_weekly_sales_purchases|show_month_overview') --}}
+        @can('show_weekly_sales_purchases| show_month_overview')
         <div class="row mb-4">
-            {{-- @can('show_weekly_sales_purchases') --}}
+            @can('show_weekly_sales_purchases')
             <div class="col-lg-7">
                 <div class="card border-0 shadow-sm h-100">
                     <div class="card-header">
@@ -83,7 +83,7 @@
                     </div>
                 </div>
             </div>
-            {{-- @endcan --}}
+            @endcan
             @can('show_month_overview')
             <div class="col-lg-5">
                 <div class="card border-0 shadow-sm h-100">
@@ -91,7 +91,7 @@
                         Overview of {{ now()->format('F, Y') }}
                     </div>
                     <div class="card-body d-flex justify-content-center">
-                        <div class="chart-container" style="position: relative; height:auto; width:280px">
+                        <div class="chart-container" id="chart-container" style="position: relative; height:auto; width:280px">
                             <canvas id="currentMonthChart"></canvas>
                         </div>
                     </div>
@@ -99,7 +99,7 @@
             </div>
             @endcan
         </div>
-        {{-- @endcan --}}
+        @endcan
 
         @can('show_monthly_cashflow')
         <div class="row">
