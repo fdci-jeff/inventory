@@ -12,7 +12,7 @@
 
 @section('content')
     <div class="container-fluid">
-        <form action="" method="POST">
+        <form action="{{ route('customer.store') }}" method="POST">
             @csrf
             <div class="row">
                 <div class="col-lg-12">

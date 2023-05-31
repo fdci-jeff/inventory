@@ -34,6 +34,7 @@ Route::group(['middleware' => 'auth'], function () {
     // Customer Route
     Route::prefix('customer')->name('customer.')->group(function () {
         Route::get('/create', [App\Http\Controllers\Customer\CustomerController::class, 'create'])->name('create');
+        Route::get('/index', [App\Http\Controllers\Customer\CustomerController::class, 'index'])->name('index');
         Route::post('/store', [App\Http\Controllers\Customer\CustomerController::class, 'store'])->name('store');
     });
 });
