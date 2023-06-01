@@ -12,7 +12,7 @@ use Spatie\MediaLibrary\InteractsWithMedia;
 use Spatie\MediaLibrary\MediaCollections\File;
 use Spatie\Permission\Traits\HasRoles;
 
-class User extends Authenticatable
+class User extends Authenticatable implements HasMedia
 {
     use HasApiTokens, HasRoles, HasFactory, Notifiable, InteractsWithMedia;
 

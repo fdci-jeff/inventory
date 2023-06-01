@@ -37,4 +37,9 @@ Route::group(['middleware' => 'auth'], function () {
         Route::get('/index', [App\Http\Controllers\Customer\CustomerController::class, 'index'])->name('index');
         Route::post('/store', [App\Http\Controllers\Customer\CustomerController::class, 'store'])->name('store');
     });
+
+     // User Route
+     Route::prefix('user')->name('user.')->group(function () {
+        Route::get('/profile', [App\Http\Controllers\User\ProfileController::class, 'edit'])->name('profile.edit');
+    });
 });
