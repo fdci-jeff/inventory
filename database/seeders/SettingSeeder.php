@@ -20,7 +20,7 @@ class SettingSeeder extends Seeder
             'notification_email' => 'notification@test.com',
             'default_currency_id' => 1,
             'default_currency_position' => 'prefix',
-            'footer_text' => 'POS © 2021 || Developed by <strong><a target="_blank" href="">Jeff David Potrido</a></strong>',
+            'footer_text' => 'POS © 2023 || Developed by <strong><a target="_blank" href="">Jeff David Potrido</a></strong>',
             'company_address' => 'Philippines'
         ]);
     }

@@ -38,8 +38,15 @@ Route::group(['middleware' => 'auth'], function () {
         Route::post('/store', [App\Http\Controllers\Customer\CustomerController::class, 'store'])->name('store');
     });
 
-     // User Route
-     Route::prefix('user')->name('user.')->group(function () {
+    // User Route
+    Route::prefix('user')->name('user.')->group(function () {
         Route::get('/profile', [App\Http\Controllers\User\ProfileController::class, 'edit'])->name('profile.edit');
+    });
+
+    // Products Route
+    Route::prefix('products')->name('products.')->group(function () {
+        Route::get('/categories', [App\Http\Controllers\Product\CategoryController::class, 'index'])->name('categories.index');
+        Route::post('/categories/store', [App\Http\Controllers\Product\CategoryController::class, 'store'])->name('categories.store');
+        Route::get('/create', [App\Http\Controllers\Product\ProductController::class, 'create'])->name('create');
     });
 });
