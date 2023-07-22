@@ -12,7 +12,7 @@
 
 @section('content')
     <div class="container-fluid">
-        <form id="product-form" action="" method="POST" enctype="multipart/form-data">
+        <form id="product-form" action="{{ route('products.store') }}" method="POST" enctype="multipart/form-data">
             @csrf
             <div class="row">
                 <div class="col-lg-12">
@@ -156,7 +156,7 @@
     <script>
         var uploadedDocumentMap = {}
         Dropzone.options.documentDropzone = {
-            url: '',
+            url: '{{ route('dropzone.upload') }}',
             maxFilesize: 1,
             acceptedFiles: '.jpg, .jpeg, .png',
             maxFiles: 3,
@@ -179,7 +179,7 @@
                 }
                 $.ajax({
                     type: "POST",
-                    url: "",
+                    url: "{{ route('dropzone.delete') }}",
                     data: {
                         '_token': "{{ csrf_token() }}",
                         'file_name': `${name}`

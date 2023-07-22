@@ -48,5 +48,14 @@ Route::group(['middleware' => 'auth'], function () {
         Route::get('/categories', [App\Http\Controllers\Product\CategoryController::class, 'index'])->name('categories.index');
         Route::post('/categories/store', [App\Http\Controllers\Product\CategoryController::class, 'store'])->name('categories.store');
         Route::get('/create', [App\Http\Controllers\Product\ProductController::class, 'create'])->name('create');
+        Route::post('/store', [App\Http\Controllers\Product\ProductController::class, 'store'])->name('store');
+        Route::get('/index', [App\Http\Controllers\Product\ProductController::class, 'index'])->name('index');
+        Route::get('/show/{product}', [App\Http\Controllers\Product\ProductController::class, 'show'])->name('show');
+    });
+
+    //Dropzone Route
+    Route::prefix('dropzone')->name('dropzone.')->group(function () {
+        Route::post('/upload', [App\Http\Controllers\Upload\UploadController::class, 'dropzoneUpload'])->name('upload');
+        Route::post('/delete', [App\Http\Controllers\Upload\UploadController::class, 'dropzoneDelete'])->name('delete');
     });
 });
