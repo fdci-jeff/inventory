@@ -58,4 +58,10 @@ Route::group(['middleware' => 'auth'], function () {
         Route::post('/upload', [App\Http\Controllers\Upload\UploadController::class, 'dropzoneUpload'])->name('upload');
         Route::post('/delete', [App\Http\Controllers\Upload\UploadController::class, 'dropzoneDelete'])->name('delete');
     });
+
+    // Barcode Route
+    Route::prefix('barcode')->name('barcode.')->group(function () {
+        Route::get('/print', [App\Http\Controllers\Barcode\BarcodeController::class, 'print'])->name('print');
+        Route::get('/pdf', [App\Http\Controllers\Barcode\BarcodeController::class, 'pdf'])->name('pdf');
+    });
 });
