@@ -64,4 +64,12 @@ Route::group(['middleware' => 'auth'], function () {
         Route::get('/print', [App\Http\Controllers\Barcode\BarcodeController::class, 'print'])->name('print');
         Route::get('/pdf', [App\Http\Controllers\Barcode\BarcodeController::class, 'pdf'])->name('pdf');
     });
+
+    // Adjustment Route
+    Route::prefix('adjustments')->name('adjustments.')->group(function() {
+        Route::get('/create', [App\Http\Controllers\Adjustment\AdjustmentController::class, 'create'])->name('create');
+        Route::post('/store', [App\Http\Controllers\Adjustment\AdjustmentController::class, 'store'])->name('store');
+        Route::get('/index', [App\Http\Controllers\Adjustment\AdjustmentController::class, 'index'])->name('index');
+        Route::get('/show/{adjustment}', [App\Http\Controllers\Adjustment\AdjustmentController::class, 'show'])->name('show');
+    });
 });
